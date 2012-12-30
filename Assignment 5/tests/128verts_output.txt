@@ -1,0 +1,201 @@
+Reading input values from stdin.
+Reading graph 1
+Graph 1: Length of shortest (0,n-1)-path: 129
+Reading graph 2
+Graph 2: Length of shortest (0,n-1)-path: 63
+Reading graph 3
+Graph 3: Length of shortest (0,n-1)-path: 45
+Reading graph 4
+Graph 4: Length of shortest (0,n-1)-path: 78
+Reading graph 5
+Graph 5: Length of shortest (0,n-1)-path: 67
+Reading graph 6
+Graph 6: Length of shortest (0,n-1)-path: 56
+Reading graph 7
+Graph 7: Length of shortest (0,n-1)-path: 56
+Reading graph 8
+Graph 8: Length of shortest (0,n-1)-path: 51
+Reading graph 9
+Graph 9: Length of shortest (0,n-1)-path: 92
+Reading graph 10
+Graph 10: Length of shortest (0,n-1)-path: 74
+Reading graph 11
+Graph 11: Length of shortest (0,n-1)-path: 102
+Reading graph 12
+Graph 12: Length of shortest (0,n-1)-path: 38
+Reading graph 13
+Graph 13: Length of shortest (0,n-1)-path: 131
+Reading graph 14
+Graph 14: Length of shortest (0,n-1)-path: 52
+Reading graph 15
+Graph 15: Length of shortest (0,n-1)-path: 69
+Reading graph 16
+Graph 16: Length of shortest (0,n-1)-path: 119
+Reading graph 17
+Graph 17: Length of shortest (0,n-1)-path: 36
+Reading graph 18
+Graph 18: Length of shortest (0,n-1)-path: 139
+Reading graph 19
+Graph 19: Length of shortest (0,n-1)-path: 121
+Reading graph 20
+Graph 20: Length of shortest (0,n-1)-path: 118
+Reading graph 21
+Graph 21: Length of shortest (0,n-1)-path: 110
+Reading graph 22
+Graph 22: Length of shortest (0,n-1)-path: 65
+Reading graph 23
+Graph 23: Length of shortest (0,n-1)-path: 141
+Reading graph 24
+Graph 24: Length of shortest (0,n-1)-path: 115
+Reading graph 25
+Graph 25: Length of shortest (0,n-1)-path: 143
+Reading graph 26
+Graph 26: Length of shortest (0,n-1)-path: 19
+Reading graph 27
+Graph 27: Length of shortest (0,n-1)-path: 86
+Reading graph 28
+Graph 28: Length of shortest (0,n-1)-path: 42
+Reading graph 29
+Graph 29: Length of shortest (0,n-1)-path: 102
+Reading graph 30
+Graph 30: Length of shortest (0,n-1)-path: 67
+Reading graph 31
+Graph 31: Length of shortest (0,n-1)-path: 77
+Reading graph 32
+Graph 32: Length of shortest (0,n-1)-path: 121
+Reading graph 33
+Graph 33: Length of shortest (0,n-1)-path: 95
+Reading graph 34
+Graph 34: Length of shortest (0,n-1)-path: 50
+Reading graph 35
+Graph 35: Length of shortest (0,n-1)-path: 101
+Reading graph 36
+Graph 36: Length of shortest (0,n-1)-path: 86
+Reading graph 37
+Graph 37: Length of shortest (0,n-1)-path: 118
+Reading graph 38
+Graph 38: Length of shortest (0,n-1)-path: 95
+Reading graph 39
+Graph 39: Length of shortest (0,n-1)-path: 99
+Reading graph 40
+Graph 40: Length of shortest (0,n-1)-path: 41
+Reading graph 41
+Graph 41: Length of shortest (0,n-1)-path: 92
+Reading graph 42
+Graph 42: Length of shortest (0,n-1)-path: 62
+Reading graph 43
+Graph 43: Length of shortest (0,n-1)-path: 95
+Reading graph 44
+Graph 44: Length of shortest (0,n-1)-path: 105
+Reading graph 45
+Graph 45: Length of shortest (0,n-1)-path: 79
+Reading graph 46
+Graph 46: Length of shortest (0,n-1)-path: 106
+Reading graph 47
+Graph 47: Length of shortest (0,n-1)-path: 74
+Reading graph 48
+Graph 48: Length of shortest (0,n-1)-path: -1
+Reading graph 49
+Graph 49: Length of shortest (0,n-1)-path: 40
+Reading graph 50
+Graph 50: Length of shortest (0,n-1)-path: 76
+Reading graph 51
+Graph 51: Length of shortest (0,n-1)-path: 72
+Reading graph 52
+Graph 52: Length of shortest (0,n-1)-path: 86
+Reading graph 53
+Graph 53: Length of shortest (0,n-1)-path: 147
+Reading graph 54
+Graph 54: Length of shortest (0,n-1)-path: 156
+Reading graph 55
+Graph 55: Length of shortest (0,n-1)-path: 49
+Reading graph 56
+Graph 56: Length of shortest (0,n-1)-path: 123
+Reading graph 57
+Graph 57: Length of shortest (0,n-1)-path: 162
+Reading graph 58
+Graph 58: Length of shortest (0,n-1)-path: 68
+Reading graph 59
+Graph 59: Length of shortest (0,n-1)-path: 33
+Reading graph 60
+Graph 60: Length of shortest (0,n-1)-path: 11
+Reading graph 61
+Graph 61: Length of shortest (0,n-1)-path: 160
+Reading graph 62
+Graph 62: Length of shortest (0,n-1)-path: 118
+Reading graph 63
+Graph 63: Length of shortest (0,n-1)-path: 64
+Reading graph 64
+Graph 64: Length of shortest (0,n-1)-path: 76
+Reading graph 65
+Graph 65: Length of shortest (0,n-1)-path: 12
+Reading graph 66
+Graph 66: Length of shortest (0,n-1)-path: 66
+Reading graph 67
+Graph 67: Length of shortest (0,n-1)-path: 107
+Reading graph 68
+Graph 68: Length of shortest (0,n-1)-path: 102
+Reading graph 69
+Graph 69: Length of shortest (0,n-1)-path: 124
+Reading graph 70
+Graph 70: Length of shortest (0,n-1)-path: 93
+Reading graph 71
+Graph 71: Length of shortest (0,n-1)-path: 77
+Reading graph 72
+Graph 72: Length of shortest (0,n-1)-path: 142
+Reading graph 73
+Graph 73: Length of shortest (0,n-1)-path: 98
+Reading graph 74
+Graph 74: Length of shortest (0,n-1)-path: 134
+Reading graph 75
+Graph 75: Length of shortest (0,n-1)-path: 103
+Reading graph 76
+Graph 76: Length of shortest (0,n-1)-path: 96
+Reading graph 77
+Graph 77: Length of shortest (0,n-1)-path: 57
+Reading graph 78
+Graph 78: Length of shortest (0,n-1)-path: 57
+Reading graph 79
+Graph 79: Length of shortest (0,n-1)-path: 51
+Reading graph 80
+Graph 80: Length of shortest (0,n-1)-path: 23
+Reading graph 81
+Graph 81: Length of shortest (0,n-1)-path: 125
+Reading graph 82
+Graph 82: Length of shortest (0,n-1)-path: 154
+Reading graph 83
+Graph 83: Length of shortest (0,n-1)-path: 96
+Reading graph 84
+Graph 84: Length of shortest (0,n-1)-path: 94
+Reading graph 85
+Graph 85: Length of shortest (0,n-1)-path: 150
+Reading graph 86
+Graph 86: Length of shortest (0,n-1)-path: 114
+Reading graph 87
+Graph 87: Length of shortest (0,n-1)-path: 124
+Reading graph 88
+Graph 88: Length of shortest (0,n-1)-path: 192
+Reading graph 89
+Graph 89: Length of shortest (0,n-1)-path: 155
+Reading graph 90
+Graph 90: Length of shortest (0,n-1)-path: 9
+Reading graph 91
+Graph 91: Length of shortest (0,n-1)-path: 89
+Reading graph 92
+Graph 92: Length of shortest (0,n-1)-path: 110
+Reading graph 93
+Graph 93: Length of shortest (0,n-1)-path: 3
+Reading graph 94
+Graph 94: Length of shortest (0,n-1)-path: 175
+Reading graph 95
+Graph 95: Length of shortest (0,n-1)-path: 85
+Reading graph 96
+Graph 96: Length of shortest (0,n-1)-path: 78
+Reading graph 97
+Graph 97: Length of shortest (0,n-1)-path: 62
+Reading graph 98
+Graph 98: Length of shortest (0,n-1)-path: 72
+Reading graph 99
+Graph 99: Length of shortest (0,n-1)-path: 53
+Reading graph 100
+Graph 100: Length of shortest (0,n-1)-path: 143

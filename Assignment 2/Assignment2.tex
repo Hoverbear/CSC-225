@@ -1,0 +1,271 @@
+\title{Assignment 2, Part 1 -- CSC 225}
+\author{
+	Andrew \bf{Hobden} \\
+	Student Number: \bf{V00788452}\\
+	Instructor: Venkatesh Srinivasan
+}
+\date{\today}
+
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{algpseudocode}
+
+\begin{document}
+\maketitle
+
+\section{Solving Recurrence Equations}
+\subsection{Question 1}
+Using repeated substitution.
+\begin{displaymath} 
+	T(n)=
+	\begin{cases}
+		T(\frac{n}{2})+n, & \text{for } n>8 \\
+		T(8) = 42
+	\end{cases}
+\end{displaymath}
+We can assume that $ n $ is in the form $ 2^k $ for $ k > 2 $.
+
+% Answer
+\subsubsection{Answer}
+Doing some substitutions to find a pattern.
+We'll sub in $ 2^k $ for $ n $, noting from the question description.
+\begin{displaymath}
+	T(2^k)=
+	\begin{cases}
+		T(2^{k-1})+2^k \\
+		T(2^3)=42
+	\end{cases}
+\end{displaymath}
+Doing repeated substitutions
+\begin{displaymath}
+	T(2^k)=T(2^{k-1})+2^k
+\end{displaymath}
+\begin{displaymath}
+	T(2^k)=T(2^{k-2})+2^{k-1}+2^k
+\end{displaymath}
+\begin{displaymath}
+	T(2^k)=T(2^{k-3})+2^{k-2}+2^{k-1}+2^k
+\end{displaymath}
+Noting the pattern for some $i$
+\begin{displaymath}
+	T(2^k)=T(2^{k-i})+(2^i-1)(2^{k-i+1})
+\end{displaymath}
+\begin{displaymath}
+	T(2^k)=T(2^{k-i})+2^{k+1}-2^{k-i+1}
+\end{displaymath}
+Getting rid of $i$ by setting $ T(2^{k-i})=T(2^3) $.
+\begin{displaymath}
+	\therefore i=k-3
+\end{displaymath}
+\begin{displaymath}
+	T(2^k)=T(2^3)+2^{k+1}-2^{3+1}=42-16+2^{k+1}
+\end{displaymath}
+\begin{displaymath}
+	T(2^k)=26+2^{k+1}=2(13+2^k)
+\end{displaymath}
+
+% TODO
+
+\subsection{Question 2}
+Using repeated substitution.
+\begin{displaymath} 
+	T(n)=
+	\begin{cases}
+		2 T(\frac{n-1}{2})+(n+1) \\
+		T(3) = 5
+	\end{cases}
+\end{displaymath}
+We can assume that $ n $ is in the form $ 2^{k+1}-1 $ for $ k > 1 $.
+\subsubsection{Answer}
+Doing some substitutions to find a pattern.
+We'll sub in $ 2^{k+1}-1 $ for $ n $, noting from the question description.
+\begin{displaymath}
+	T(2^{k+1}-1)=
+	\begin{cases}
+		2 T(2^k-1)+(2^{k+1}) \\
+		T(3) = 5
+	\end{cases}
+\end{displaymath}
+Doing repeated substitutions
+\begin{displaymath}
+	T(2^{k+1}-1)=2T(2^k-1)+2^{k+1}
+\end{displaymath}
+\begin{displaymath}
+	T(2^{k+1}-1)=2(T(2^{k-1}-1)+2^{k})+2^{k+1}
+\end{displaymath}
+Simplifying
+\begin{displaymath}
+	T(2^{k+1}-1)=2^2 T(2^{k-1}-1)+2^{k+1}+2^{k+1}
+\end{displaymath}
+Next substitution (Simplified)
+\begin{displaymath}
+	T(2^{k+1}-1)=2^3 T(2^{k-2}-1)+3(2^{k+1})
+\end{displaymath}
+Final substitution
+\begin{displaymath}
+	T(2^{k+1}-1)=2^4 T(2^{k-3}-1)+4(2^{k+1})
+\end{displaymath}
+Noting the pattern for some $i$
+\begin{displaymath}
+	T(2^{k+1}-1)=2^i T(2^{k+1-i}-1)+i(2^{k+1})
+\end{displaymath}
+Getting rid of $i$ by setting $T(2^{k+1-i}-1)=T(3)=T(2^{1+1}-1)$
+\begin{displaymath}
+	\therefore i=k-1
+\end{displaymath}
+\begin{displaymath}
+	T(2^{k+1}-1)=2^{k-1}(5)+(k-1)(2^{k+1})
+\end{displaymath}
+
+\section{Basic Data Structures}
+\subsection{Stacks \& Queues}
+\subsubsection{Queue as 2 Stacks}
+Describe how to implement the queue ADT using two stacks. What is the running time of the enqueue() and dequeue() operations?
+\linebreak
+\linebreak
+Since a queue is FIFO, and our stacks are LIFO, we can store our elements in one of the stacks and use the other as a temporary storage. we'll assume our stacks are $ mainStack $ and $ tempStack $.
+
+\begin{description}
+	\item[enqueue()] To accomplish this we need to add an element to the bottom of $ mainStack $. In order to preserve ordering, we'll $ push() $ all of the current elements in $ mainStack $ onto $ tempStack $, add the $ item $ to $ mainStack $, then push all of the elements in $ tempStack $ back onto $ mainStack $. \\
+		This should be $ O(2k+1) $ where $ k $ is the size of the $ mainStack $. Since $ push() $ is $ O(1) $, and $ pop() $ is $ O(1) $.
+		\begin{algorithmic}
+			\While {$!mainStack.isEmpty()$}
+				\State $tempStack.push(mainStack.pop())$
+			\EndWhile
+			\State $mainStack.push(item)$
+			\While {$!tempStack.isEmpty()$}
+				\State $mainStack.push(tempStack.pop())$
+			\EndWhile
+		\end{algorithmic}
+	\item[dequeue()] Since our $ enqueue() $ algorithm places newest elements at the bottom of the stack, the oldest element should be on the top of $ mainStack $. This means all we need to do is $ pop() $ off $ mainStack $ \\
+		This should be $ O(1) $ since $ pop() $ is $ O(1) $.
+		\begin{algorithmic}
+			\State $mainStack.pop()$
+		\end{algorithmic}
+\end{description}
+
+\subsubsection{Stack as 2 Queues}
+Similarly, describe how to implement the stack ADT using two queues. What is the running time of the push() and pop() operations?
+\linebreak
+\linebreak
+Since our Stack is LIFO, and our Queues are FIFO, we'll have $ mainQueue $ and $ tempQueue $ with similar jobs as the stacks above.
+\begin{description}
+	\item[push()] This needs to place the $ item $ to the front of our $ mainQueue $. We can $ enqueue() $ the $ item $ into $ tempQueue $, then $ dequeue() $ everything from $ mainQueue $ into $ tempQueue $. Finally, just reassign $tempQueue $ as $ mainQueue $. \\
+		This should be $ O(k+1) $ where $ k $ is the size of $ mainQueue $ since both $ enqueue $ and $ dequeue $ are $ O(1) $
+		\begin{algorithmic}
+			\State $ tempQueue.enqueue(item) $
+			\While { $ !mainQueue.isEmpty() $ }
+				\State $ tempQueue.enqueue(mainQueue.dequeue()) $
+			\EndWhile
+			\State $ mainQueue \gets tempQueue $
+		\end{algorithmic}
+	\item[pop()] Since our $ push() $ algorithm placed our last (Newest) element at the front of $ mainQueue $ we can just $ dequeue() $ off it to get the required element.
+		This should be $ O(1) $
+		\begin{algorithmic}
+			\State $ mainQueue.dequeue() $
+		\end{algorithmic}
+\end{description}
+% TODO
+
+\subsection{Array-Based Vectors}
+\subsubsection{Question}
+Describe an array-based implementation of the vector ADT that achieves O(1) time for insertions and removals at rank 0 and for insertions and removals at the end of the vector. It should also provide a O(1) time elemAtRank algorithm.
+\subsubsection{Answer Description}
+We can use something similar to an array-based queue for this purpose.
+Our data structure is a single array.
+We'll store $ front $ and $ size $ as variables denoting rank 0 and the size respectively. Therefore, we can address a rank with just $ array[front+rank] $\\
+Assumption: Our array is circular, and called $ array $ \\
+Assumption: 0-based arrays.
+\subsubsection{insertAtRank(val, rank)}
+		\begin{algorithmic}
+			\If{$ rank = 0 $}
+				\State $ front \gets front -1 $
+				\State $ array[front] \gets val $
+			\Else
+				\For{$ i \gets size $; $ i > rank $; $ i-- $;}
+				\Comment i points to an empty element
+					\State $ array[front+i+1] \gets array[front+i] $
+				\EndFor
+				\State $ array[rank] \gets val $
+			\EndIf
+			\State $ size \gets size + 1$
+		\end{algorithmic}
+\subsubsection{removeAtRank(rank)}
+		\begin{algorithmic}
+			\State $ element \gets array[rank] $
+			\If{$ rank = 0 $}
+				\State $ front \gets front + 1 $
+				\Comment We can orphan the old front.
+			\Else
+				\For{$ i \gets rank $; $ i < size-1 $; $ i++ $;}
+				\State \Comment selected rank to the last filled rank
+					\State $ array[front+i] \gets array[front+i+1] $
+				\EndFor
+			\EndIf
+			\State $ size \gets size - 1$
+			\State \Return $element$
+		\end{algorithmic}
+\subsubsection{elemAtRank(rank)}
+	\begin{algorithmic}
+		\State \Return $ array[front+rank] $
+	\end{algorithmic}
+
+
+\section{Sorting Algorithms}
+\subsection{Stability}
+A sorting algorithm is said to be stable if it maintains the relative order of records with equal keys. Which, if any, of the algorithm bubble sort, selection sort, insertion sort, merge sort and quick sort are stable?
+\begin{description}
+	\item[Stable] Sorts
+	\begin{itemize}
+		\item Bubble Sort
+		\item Insertion Sort
+		\item Merge Sort
+	\end{itemize}
+	\item[Unstable] Sorts
+	\begin{itemize}
+		\item Selection Sort
+		\item Quick Sort
+	\end{itemize}
+\end{description}
+
+\subsection{Merge Sort \& Inversions}
+\subsubsection{Question}
+In an array A, two elements A[i] and A[j] form an inversion if $ i < j $ and $ A[i] > A[j] $. Modify merge sort so that, in addition to sorting, it also counts the number of inversions in the array.
+\subsubsection{Answer}
+Mergesort Pseudocode:
+\begin{algorithmic}
+	\If{$ S.size() < 2 $}
+		\Return $ S $
+	\EndIf
+	\State $ S_1, S_2 \gets divide(S) $
+	\State $ S_1 \gets mergeSort(S_1) $
+	\State $ S_2 \gets mergeSort(S_2) $
+	\State $ S \gets merge(S_1, S_2) $ 
+	\Comment We'll need to modify merge()
+	\\
+	\Return $ S $
+\end{algorithmic}
+Merge Pseudocode:
+\begin{algorithmic}
+	\While{not ($ S_1.isEmpty() $ or $ S_2.isEmpty() $)}
+		\If{$ S_1.first().key() < S_2.first().key() $}
+			\State $ S.insertLast(S_1.removeFirst()) $
+		\Else
+			\State $ S.insertLast(S_2.removeFirst()) $
+			\Comment Here we do an inversion.
+			\State $ inversionCount++ $
+			\Comment Increment our inversion count.
+		\EndIf
+	\EndWhile
+	\While{not $ S_1.isEmpty() $}
+		\State $ S.insertLast(S_1.removeFirst()) $
+	\EndWhile
+	\While{not $ S_2.isEmpty() $}
+		\State $ S.insertLast(S_2.removeFirst()) $
+	\EndWhile
+	\\
+	\Return S
+\end{algorithmic}
+
+\end{document}
